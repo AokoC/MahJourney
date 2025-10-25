@@ -851,7 +851,7 @@ class Dict(QObject):
 				"settings.career_stats": "Career Stats",
 				"settings.timer": "25s Timer",
 				"settings.endless": "Endless Mode",
-				"settings.reset_window": "Reset Window & Font Size",
+				"settings.reset_window": "Reset Window, Font Size",
 				"settings.size_hint": "Some settings may require restart",
 
 				"lang.en": "English",

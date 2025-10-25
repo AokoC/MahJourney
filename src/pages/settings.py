@@ -37,7 +37,7 @@ class SettingsPage(QWidget):
         left_layout.addWidget(github_label)
 
         # Version text
-        version_label = QLabel("MahJourney v0.9")
+        version_label = QLabel("MahJourney v0.9.0")
         version_label.setAlignment(Qt.AlignCenter)
         version_label.setStyleSheet("Qlabel{padding:8;}")
         left_layout.addWidget(version_label)

@@ -1,13 +1,13 @@
 {
-  "language": "en",
+  "language": "jp",
   "font_size": 12,
   "career_stats": false,
   "timer": false,
   "endless": false,
-  "window_geometry_b64": "AdnQywADAAAAAABjAAAANwAAB2wAAAUUAAAAZAAAAGQAAAdrAAAFEwAAAAAAAAAADwAAAABkAAAAZAAAB2sAAAUT",
+  "window_geometry_b64": "AdnQywADAAAAAAAxAAAB5AAABzoAAAbBAAAAMgAAAhEAAAc5AAAGwAAAAAAAAAAADwAAAAAyAAACEQAABzkAAAbA",
   "window_geometry": {
-    "x": 99,
-    "y": 55,
+    "x": 49,
+    "y": 484,
     "w": 1800,
     "h": 1200
   }
