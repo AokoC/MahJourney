@@ -19,7 +19,7 @@ Practice makes perfect.
 
 On the practice page, filter the desired problems and modes, then start answering. Select your discard action and tile, then submit.
 
-You can immediately see the pre-set answers (correct/incorrect indicated by green/red borders), and the "Problem Description" on the left sidebar will change to show "Explanation".
+You can immediately see the pre-set answers (correct/incorrect indicated by green/red borders), and the "Question" on the left sidebar will change to show "Explanation".
 
 <div align="center">
   <br><img src="others/images/EN/Quiz-Image-EN.png" width="80%" alt="">
@@ -37,7 +37,7 @@ Also supports problems with images. Suitable for complex situations involving ca
 
 The initial page for uploading problems. Here you can:
 - Fill in basic information like title, background, and game info.
-- Write the problem intro and explanation.
+- Write the question and explanation.
 - (Optional) Upload or paste an image.
 - (Optional) Set a custom difficulty level for future reference and filtering.
   - Default is 0. If set to 0, the difficulty will not be displayed in the practice interface or problem bank.
