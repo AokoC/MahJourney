@@ -1,5 +1,6 @@
 import json
 import os
+import sys
 from PyQt5.QtCore import QObject, pyqtSignal
 from PyQt5.QtGui import QFont
 
@@ -11,9 +12,13 @@ class SettingsManager(QObject):
 
 		super().__init__()
 		if path:
-			save_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), "saves")
-			os.makedirs(save_dir, exist_ok=True)
-			self._path = os.path.join(save_dir, "settings.json")
+			# choose saves folder next to executable when frozen by PyInstaller
+			if getattr(sys, 'frozen', False):
+				base = os.path.dirname(sys.executable)
+			else:
+				base = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
+			os.makedirs(os.path.join(base, 'saves'), exist_ok=True)
+			self._path = os.path.join(base, 'saves', "settings.json")
 			# print(f"Settings path: {self._path}")
 		self._settings = {
             "language": "en",

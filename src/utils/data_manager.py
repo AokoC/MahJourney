@@ -1,4 +1,5 @@
 import os
+import sys
 import json
 import shutil
 from datetime import datetime
@@ -7,8 +8,18 @@ import uuid
 class DataManager:
     def __init__(self, base_dir=None):
         """Set save folder/file"""
+        # Determine base directory for saves.
+        # When frozen by PyInstaller, put saves next to the executable so
+        # the folder sits beside the .exe. During development, keep saves
+        # under the project root.
+        if getattr(sys, 'frozen', False):
+            # sys.executable points to the running exe; use its directory.
+            base = os.path.dirname(sys.executable)
+        else:
+            # project root: two levels up from this utils folder
+            base = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
 
-        saves_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), "saves")
+        saves_dir = os.path.join(base, "saves")
         os.makedirs(saves_dir, exist_ok=True)
         self.images_dir = os.path.join(saves_dir, "images")
         os.makedirs(self.images_dir, exist_ok=True)
