@@ -1,4 +1,4 @@
-# MahJourney 何切りの旅
+# MahJourney 何切の旅
 
 [ [Eng](../README.md) | [简中](README-SC.md) | [繁中](README-TC.md) | [日本语](README-JP.md) ]
 
