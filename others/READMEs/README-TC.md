@@ -109,7 +109,7 @@ v0.9.0 [Releases](https://github.com/AokoC/MahJourney/releases)
 
 ### 可以更換牌面嗎？
 
-> 當然可以。打開 `.../_internal/src/assets/tiles`，里面就是牌面素材。只要你保持文件名、格式名、素材尺寸（70*100），可以隨意替換。
+> 當然可以。打開 `.../_internal/src/assets/tiles`，裏面就是牌面素材。只要你保持文件名、格式名、素材尺寸（70*100），可以隨意替換。
 
 ### 我打開軟件後有些字擠在一起了
 
