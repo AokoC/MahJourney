@@ -20,6 +20,7 @@ except ImportError:
 
 from src.utils.i18n import Dict
 from src.utils.format_applier import apply_font_to_widgets
+from src.utils.path_finder import get_resource_path
 from src.utils.settings_manager import SettingsManager
 
 from src.widgets.hint_dialog import StyledMessageBox
@@ -1648,7 +1649,7 @@ class LibraryPage(QWidget):
 
         tile_label = QLabel()
         tile_filename = f"{tile}.png"
-        tile_path = os.path.join("src", "assets", "tiles", tile_filename)
+        tile_path = get_resource_path(os.path.join("src", "assets", "tiles", tile_filename))
         
         if os.path.exists(tile_path):
             pixmap = QPixmap(tile_path)

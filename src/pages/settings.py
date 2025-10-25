@@ -1,9 +1,12 @@
+import os
+
 from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QLabel, QComboBox, QSpinBox, QPushButton, QCheckBox
 from PyQt5.QtCore import Qt, QUrl
 from PyQt5.QtGui import QPixmap, QDesktopServices
 
 from src.utils.i18n import Dict
 from src.utils.format_applier import apply_font_to_widgets
+from src.utils.path_finder import get_resource_path
 
 class SettingsPage(QWidget):
 
@@ -27,8 +30,9 @@ class SettingsPage(QWidget):
         
         # GitHub icon..?
         github_label = QLabel()
-        '''icon_file = "src/assets/icons/github.png"'''
-        icon_file = "src/assets/icons/0itmub.png"
+        '''icon_file = "src/assets/icons/github.png"
+        icon_file = "src/assets/icons/0itmub.png"'''
+        icon_file = get_resource_path(os.path.join("src", "assets", "icons", "0itmub.png"))
         github_pixmap = QPixmap(icon_file)
         if not github_pixmap.isNull():
             github_pixmap = github_pixmap.scaled(128, 128, Qt.KeepAspectRatio, Qt.SmoothTransformation)

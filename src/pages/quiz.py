@@ -9,6 +9,7 @@ from PyQt5.QtGui import QPixmap, QFont, QPainter, QPen, QColor
 
 from src.utils.i18n import Dict
 from src.utils.format_applier import apply_font_to_widgets
+from src.utils.path_finder import get_resource_path
 from src.utils.data_manager import DataManager
 from src.utils.settings_manager import SettingsManager
 from src.utils.validators import Validator
@@ -805,7 +806,7 @@ class QuizPage(QWidget):
                 
                 tile_label = QLabel()
                 tile_filename = f"{dora_tiles[i]}.png"
-                tile_path = os.path.join("src", "assets", "tiles", tile_filename)
+                tile_path = get_resource_path(os.path.join("src", "assets", "tiles", tile_filename))
                 
                 if os.path.exists(tile_path):
                     pixmap = QPixmap(tile_path)
@@ -828,7 +829,7 @@ class QuizPage(QWidget):
                 back_layout.setContentsMargins(0, 0, 0, 0)
                 
                 back_label = QLabel()
-                back_path = os.path.join("src", "assets", "tiles", "back.png")
+                back_path = get_resource_path(os.path.join("src", "assets", "tiles", "back.png"))
                 
                 if os.path.exists(back_path):
                     pixmap = QPixmap(back_path)
@@ -1350,7 +1351,7 @@ class QuizPage(QWidget):
 
         tile_label = QLabel()
         tile_filename = f"{tile}.png"
-        tile_path = os.path.join("src", "assets", "tiles", tile_filename)
+        tile_path = get_resource_path(os.path.join("src", "assets", "tiles", tile_filename))
         
         # Set up clickable functionality
         tile_label.setCursor(Qt.PointingHandCursor)
