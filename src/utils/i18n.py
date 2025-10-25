@@ -890,7 +890,7 @@ class Dict(QObject):
 				"upload.notes_placeholder": "Enter answer explanation...",
 
 				"upload.editor.title": "Edit Entry: ",
-				"upload.editor.create_time": "Created",
+				"upload.editor.create_time": "Created At",
 				
 				"hands.help.title": "Hand Tiles Help",
 				"hands.help.content": "Hand must be one of the following counts:\n2/5/8/11/14 (in-turn hand count);\n4/7/10/13 (out-of-turn hand count).\n\nHand selector automatically arranges tiles.\nWhen hand count indicates in-turn, the selector automatically places the last tile on the far right as the current draw.\nTo customize the current draw, select that tile last.\n\nAdditionally, hand selector and dora indicator selector share single tile selection limits.",
