@@ -1,6 +1,6 @@
 # MahJourney 何切之旅
 
-[ [Eng](../../README.md) | [简中](README-TC.md) | [繁中](README-TC.md) | [日本語](README-JP.md) ]
+[ [Eng](../../README.md) | [简中](README-SC.md) | [繁中](README-TC.md) | [日本語](README-JP.md) ]
 
 用於立直麻將何切訓練的工具。你可以上傳帶有圖片的自定義何切；管理題庫、導入或導出何切集；以及在選擇模式或篩選題目後，進行何切練習。甚至單純當成一個收藏鑑賞工具，用於收集自己遇到過的複雜場況何切，也是可以的。
 
