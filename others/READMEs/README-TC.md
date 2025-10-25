@@ -97,7 +97,7 @@ v0.9.0 [Releases](https://github.com/AokoC/MahJourney/releases)
 
 ## :question:我有問題！
 
-### 為甚麼你圖片里有個何切三百？
+### 為甚麼你圖片裏有個何切三百？
 
 > 這是我自己敲的。你可以同樣在 [Releases](https://github.com/AokoC/MahJourney/releases) 找到它，名為 `300.zip`；到管理界面導入該文件即可。就當是一個可選的內置題庫。
 >
