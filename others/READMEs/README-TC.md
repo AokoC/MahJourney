@@ -99,7 +99,7 @@ v0.9.0 [Releases](https://github.com/AokoC/MahJourney/releases)
 
 ### 為甚麼你圖片里有個何切三百？
 
-> 這是我自己敲的。你可以同樣在 [Releases](https://github.com/AokoC/MahJourney/releases) 找到它，名為 300.zip；到管理界面導入該文件即可。就當是一個可選的內置題庫。
+> 這是我自己敲的。你可以同樣在 [Releases](https://github.com/AokoC/MahJourney/releases) 找到它，名為 `300.zip`；到管理界面導入該文件即可。就當是一個可選的內置題庫。
 >
 > 值得注意的是，該何切集只有題目，並無講解，且由於是人手敲的可能會有錯漏。當中的部分答案改成了 Naga 的切法，或是多個答案。具體請參考何切 300 原書，以及[這個 b 站專欄](https://www.bilibili.com/read/readlist/rl865145)。
 
