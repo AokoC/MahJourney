@@ -95,11 +95,11 @@ This project was initially created to fulfill my personal needs, so it's unlikel
 
 ## :question:FAQ
 
-### What's the "300 Problems" in your screenshot?
+### What's the "何切三百" in your screenshot?
 
-> I created that set myself. You can also find it in [Releases](https://github.com/AokoC/MahJourney/releases), named `300.zip`. Import this file in the management interface. Think of it as an optional built-in problem bank.
+> That's a set of problems and I created that set myself. You can also find it in [Releases](https://github.com/AokoC/MahJourney/releases), named `300.zip`. Import this file in the management interface. Think of it as an optional built-in problem bank.
 >
-> Note that this problem set only contains the problems themselves, without explanations, and there might be errors due to manual entry. Some answers have been adjusted according to Naga's suggestions or include multiple correct answers. Please refer to the original "300 Problems" book and [this Bilibili column](https://www.bilibili.com/read/readlist/rl865145) for details.
+> Note that this problem set only contains the problems themselves, without explanations, and there might be errors due to manual entry. Some answers have been adjusted according to Naga's suggestions or include multiple correct answers. Please refer to the original "300 Problems" book and [this Bilibili article](https://www.bilibili.com/read/readlist/rl865145) for details.
 
 > Uploading a large number of problems at once can be very labor-intensive. If you need to do bulk uploads (e.g., for other problem books):
 >
