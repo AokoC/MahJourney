@@ -13,7 +13,8 @@ def parse_input_line(line):
     e w 1 0 7 2z 6778p1122345s77z0p 2s
     Where: e is wind, w is self wind, 1 0 7 is game/honba/turn,
     6778p1122345s77z0p is hand (with 0p just drawed), 2s is answer
-    *If there are special questions that includes other answer choice, or melds, you may need to mark them down and edit them one by one after batch uploading. """
+    * If there are special questions that includes other answer choice, or melds, you may need to mark them down and edit them one by one after batch uploading. 
+    * Or, you may need to edit this code to meet your needs. """
 
     parts = line.strip().split()
     if len(parts) != 8:
