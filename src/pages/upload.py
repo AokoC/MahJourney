@@ -70,7 +70,7 @@ class UploadPage(QWidget):
         self.create_time_input = QDateTimeEdit()
         self.create_time_input.setStyleSheet("QDateTimeEdit{padding:8;}")
         self.create_time_input.setDateTime(QDateTime.currentDateTime())
-        '''self.create_time_input.setDisplayFormat("yyyy-MM-dd hh:mm:ss")'''
+        self.create_time_input.setDisplayFormat("yyyy-MM-dd hh:mm:ss")
         create_time_layout.addWidget(self.create_time_input)
         
         self.create_time_group.setLayout(create_time_layout)
