@@ -2,7 +2,7 @@
 
 [ [Eng](README.md) | [简中](others/READMEs/README-SC.md) | [繁中](others/READMEs/README-TC.md) | [日本語](others/READMEs/README-JP.md) ]
 
-A tool for Riichi Mahjong discard training. You can upload custom discard problems with images; manage problem sets, import or export problem collections; and practice discards after selecting modes or filtering problems. It can also be used simply as a collection and appreciation tool for gathering complex board state discards you have encountered.
+A tool for Riichi Mahjong how-to-cut (何切る) training. You can upload custom discard problems with images; manage problem sets, import or export problem collections; and practice discards after selecting modes or filtering problems. It can also be used simply as a collection and appreciation tool for gathering complex board state discards you have encountered.
 
 Wish you continuous improvement in your Mahjong skills.
 
@@ -25,7 +25,7 @@ You can immediately see the pre-set answers (correct/incorrect indicated by gree
   <br><img src="others/images/EN/Quiz-Image-EN.png" width="80%" alt="">
 </div><br>
 
-Also supports problems with images. Suitable for complex situations involving call judgments, point calculations, and deal-in avoidance decisions. Note that the images themselves are not clickable.
+Also supports problems with images. Suitable for complex situations involving call judgments, point calculations. Note that the images themselves are not clickable.
 
 ---
 
