@@ -1634,30 +1634,30 @@ class UploadPage(QWidget):
     def on_players_changed(self, players_text):
         """Handle players selection change - clear tile-related fields (becoz needs disable chi / 2~8m in 3P)"""
 
-        # Clear dora, hands, answer choice and answer input, when [players] change
-        self.dora_input.clear()
-        self.hands_input.clear()
-        
-        # Clear dora and hands display labels
-        self.dora_display.setText("")
-        self.hands_display.setText("")
-        
-        # Clear current selections
-        self.current_dora = ""
-        self.current_hands = ""
-        self.current_answer = ""
-        
-        # Clear answer display and input
-        self.answer_display.setText("")
-        self.answer_input.clear()
-        
-        # Clear answer buttons
-        self.answer_buttons.setExclusive(False)
-        for btn in self.answer_buttons.buttons():
-            btn.setChecked(False)
-        self.answer_buttons.setExclusive(True)
-        
-        # Update button states
+        if players_text == Dict.t("players.three"):
+            # Clear dora, hands, answer choice and answer input, when switching to 3P mode
+            self.dora_input.clear()
+            self.hands_input.clear()
+            
+            # Clear dora and hands display labels
+            self.dora_display.setText("")
+            self.hands_display.setText("")
+            
+            # Clear current selections
+            self.current_dora = ""
+            self.current_hands = ""
+            self.current_answer = ""
+            
+            # Clear answer display and input
+            self.answer_display.setText("")
+            self.answer_input.clear()
+            
+            # Clear answer buttons
+            self.answer_buttons.setExclusive(False)
+            for btn in self.answer_buttons.buttons():
+                btn.setChecked(False)
+            self.answer_buttons.setExclusive(True)
+    
         self.update_select_button_state()
         self.update_answer_options_state()
 
