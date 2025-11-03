@@ -796,7 +796,7 @@ class UploadPage(QWidget):
         self.original_pixmap = None
         self.btn_open_folder.setVisible(False)  # Hide open folder button when clearing image
         
-        # Temporary files will be cleaned up on program exit.
+        self.cleanup_temp_files()
         
         self.setFocus()
 
@@ -1266,35 +1266,57 @@ class UploadPage(QWidget):
         
         # Process image path
         image_path = None
-        if self.current_image_path and self.current_image_path != "clipboard":
-            image_path = self.current_image_path
-        elif self.current_image_path == "clipboard" and self.original_pixmap:
-            import tempfile
-            temp_file = tempfile.NamedTemporaryFile(suffix='.png', delete=False)
-            self.original_pixmap.save(temp_file.name, 'PNG')
-            image_path = temp_file.name
-            # Close the file handle immediately to avoid "file in use" errors
-            temp_file.close()
-            # Track only the file path for cleanup, not the file object
-            self.temp_files.append(temp_file.name)
-        
+
+        if self.is_edit_mode:
+        # In edit mode: only when image changes, pass path
+            if self.current_image_path == "clipboard" and self.original_pixmap:
+                import tempfile
+                temp_file = tempfile.NamedTemporaryFile(suffix='.png', delete=False)
+                self.original_pixmap.save(temp_file.name, 'PNG')
+                image_path = temp_file.name
+                temp_file.close()
+                self.temp_files.append(temp_file.name)
+            elif self.current_image_path and self.current_image_path != "clipboard":
+                # New
+                image_path = self.current_image_path
+            elif not self.original_pixmap:
+                # Cleared
+                image_path = ""
+            else:
+                # Keep
+                image_path = None
+        else:
+            if self.current_image_path and self.current_image_path != "clipboard":
+                image_path = self.current_image_path
+            elif self.current_image_path == "clipboard" and self.original_pixmap:
+                import tempfile
+                temp_file = tempfile.NamedTemporaryFile(suffix='.png', delete=False)
+                self.original_pixmap.save(temp_file.name, 'PNG')
+                image_path = temp_file.name
+                temp_file.close()
+                self.temp_files.append(temp_file.name)
+    
         # Save to database
         if self.is_edit_mode:
             # Update existing entry
             success = self.data_manager.update_entry(self.current_edit_entry_id, image_path, data)
             if success:
+                if image_path and image_path in self.temp_files:
+                    self.cleanup_single_temp_file(image_path)
+                
                 StyledMessageBox.information(self, Dict.t("msg.success"), Dict.t("msg.success.save")).exec_()
                 self.edit_mode_saved.emit()
-                # Note: Temporary files will be cleaned up on program exit
             else:
                 StyledMessageBox.critical(self, Dict.t("msg.failed"), Dict.t("msg.failed.save")).exec_()
         else:
             # Create new entry
             success = self.data_manager.save_entry(image_path, data)
             if success:
+                if image_path and image_path in self.temp_files:
+                    self.cleanup_single_temp_file(image_path)
+                
                 StyledMessageBox.information(self, Dict.t("msg.success"), Dict.t("msg.success.save")).exec_()
                 self.upload_complete.emit()
-                # Note: Temporary files will be cleaned up on program exit
                 self.clear_form()
             else:
                 StyledMessageBox.critical(self, Dict.t("msg.failed"), Dict.t("msg.failed.save")).exec_()
@@ -1310,6 +1332,8 @@ class UploadPage(QWidget):
         self.original_pixmap = None
         self.btn_clear_image.setVisible(False)
         self.setFocus()
+
+        self.cleanup_temp_files()
         
         # Clear selections
         self.combobox_source.setCurrentIndex(0)
@@ -1636,6 +1660,8 @@ class UploadPage(QWidget):
         # Update button states
         self.update_select_button_state()
         self.update_answer_options_state()
+
+    # --- Image path handle method --- #
     
     def _on_open_folder(self):
         """Open folder, and locate the file"""
@@ -1662,3 +1688,14 @@ class UploadPage(QWidget):
                         subprocess.run(['xdg-open', folder_path])
                 except Exception as e:
                     print(f"Failed to open folder: {e}")
+
+    def cleanup_single_temp_file(self, file_path):
+        """Clean temp file to avoid comflict"""
+
+        try:
+            if file_path in self.temp_files:
+                self.temp_files.remove(file_path)
+            if os.path.exists(file_path):
+                os.unlink(file_path)
+        except Exception as e:
+            print(f"Failed to cleanup temp file {file_path}: {e}")

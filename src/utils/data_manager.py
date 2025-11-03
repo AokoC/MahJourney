@@ -141,24 +141,35 @@ class DataManager:
             old_image_filename = all_data[entry_id].get('image_filename', '')
             new_image_filename = old_image_filename
             
-            if image_path and os.path.exists(image_path):
-                file_ext = os.path.splitext(image_path)[1]
-                new_image_filename = f"{entry_id}{file_ext}"
-                destination_path = os.path.join(self.images_dir, new_image_filename)
-                shutil.copy2(image_path, destination_path)
-                
-                # Delete old image if it exists and is different
-                if old_image_filename and old_image_filename != new_image_filename:
-                    old_image_path = os.path.join(self.images_dir, old_image_filename)
-                    if os.path.exists(old_image_path):
-                        os.remove(old_image_path)
-            elif image_path is None:
-                # Clear image
-                new_image_filename = ""
-                if old_image_filename:
-                    old_image_path = os.path.join(self.images_dir, old_image_filename)
-                    if os.path.exists(old_image_path):
-                        os.remove(old_image_path)
+            # Only when image_path is not None and is Different, update
+            if image_path is not None:
+                if image_path and os.path.exists(image_path):
+                    # Check if is new
+                    current_image_path = self.get_image_path(entry_id)
+                    if current_image_path != image_path:
+                        file_ext = os.path.splitext(image_path)[1]
+                        new_image_filename = f"{entry_id}{file_ext}"
+                        destination_path = os.path.join(self.images_dir, new_image_filename)
+                        shutil.copy2(image_path, destination_path)
+                        
+                        # Delete old
+                        if old_image_filename and old_image_filename != new_image_filename:
+                            old_image_path = os.path.join(self.images_dir, old_image_filename)
+                            if os.path.exists(old_image_path):
+                                os.remove(old_image_path)
+                    else:
+                        # Keep
+                        new_image_filename = old_image_filename
+                else:
+                    # image_path is "", means clear
+                    new_image_filename = ""
+                    if old_image_filename:
+                        old_image_path = os.path.join(self.images_dir, old_image_filename)
+                        if os.path.exists(old_image_path):
+                            os.remove(old_image_path)
+            else:
+                # Keep
+                new_image_filename = old_image_filename
             
             # Update entry data
             entry_data = data.copy()
@@ -170,7 +181,7 @@ class DataManager:
             return self.save_data(all_data)
             
         except Exception as e:
-            # print(f"Update wrong: {e}")
+            print(f"Update wrong: {e}")
             return False
     
     def delete_entry(self, entry_id):

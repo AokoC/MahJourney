@@ -1361,10 +1361,12 @@ class QuizPage(QWidget):
         
         # Set up click event
         def mousePressEvent(event):
-            if event.button() == Qt.LeftButton:
+            if event.button() == Qt.LeftButton and self.tiles_enabled:
                 self.on_tile_selected(tile_index)
                 # Update visual state
                 self.update_tile_selection_state()
+            else:
+                event.ignore()
         
         tile_label.mousePressEvent = mousePressEvent
         
