@@ -1634,8 +1634,8 @@ class UploadPage(QWidget):
     def on_players_changed(self, players_text):
         """Handle players selection change - clear tile-related fields (becoz needs disable chi / 2~8m in 3P)"""
 
+        # Clear dora, hands, answer choice and answer input, when switching to 3P mode
         if players_text == Dict.t("players.three"):
-            # Clear dora, hands, answer choice and answer input, when switching to 3P mode
             self.dora_input.clear()
             self.hands_input.clear()
             
