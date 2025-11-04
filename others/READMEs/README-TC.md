@@ -6,7 +6,7 @@
 
 祝雀力日進。
 
-## :sparkles:功能
+## :功能
 
 ### 刷題！
 
@@ -67,10 +67,10 @@
 - 以列表或網格形式瀏覽何切題庫
 - 選中某道何切，修改，或觀看其生涯數據
 - 批量選中多道何切，進行刪除、導出等操作
-  - 導出操作會將對應的數據和圖片打包成 .zip，保存至 `.../saves/export/` 文件夾。如有需要，可以用導出備份
+  - 導出操作會將對應的數據和圖片打包成 `.zip`，保存至 `.../saves/export/` 文件夾。如有需要，可以用導出備份
   - 刪除操作將無法恢覆
 - 導入何切
-  - 一般只接受導出產生的 .zip
+  - 一般只接受導出產生的 `.zip`
 
 <div align="center">
   <br><img src="../images/TC/Manage-Filter-TC.png" width="40%" alt="">
@@ -78,11 +78,7 @@
 
 - 使用條件篩選或手牌篩選，只瀏覽符合條件的何切
 
-## :package:下載
-
-v0.9.0 [Releases](https://github.com/AokoC/MahJourney/releases)
-
-## :construction:待實現
+## 待實現
 
 從可能到不可能排列：
 
@@ -95,7 +91,11 @@ v0.9.0 [Releases](https://github.com/AokoC/MahJourney/releases)
 
 這個項目最初是為了滿足我自身需求而做的，因此大概率不會再實裝以上這些項目了，僅僅是列出曾想過的功能……如果你有興趣的話，歡迎 PR。
 
-## :question:我有問題！
+## 下載
+
+v0.9.1 [Releases](https://github.com/AokoC/MahJourney/releases)
+
+## 我有問題！
 
 ### 為甚麼你圖片裏有個何切三百？
 
@@ -105,7 +105,7 @@ v0.9.0 [Releases](https://github.com/AokoC/MahJourney/releases)
 
 > 一次性上傳大量的何切會非常耗費精力。如果你也需要大量上傳的話（例如其他何切書籍）：
 >
-> 請參考[這個文件](../batch-upload/batch.py)，該程序可以幫助你將大量的 .txt 格式的、換行區分的何切，轉換成本軟件的 data.json 格式。只不過 .txt 還是得自己敲（而且我忘記了要做成 .zip 才能導入，所以你可能還得手動壓縮下）。
+> 請參考[這個文件](../batch-upload/batch.py)，該程序可以幫助你將大量的 `.txt` 格式的、換行區分的何切，轉換成本軟件的 `data.json` 格式。只不過 `.txt` 還是得自己敲（而且我忘記了要做成 `.zip` 才能導入，所以你可能還得手動壓縮下）。
 
 ### 可以更換牌面嗎？
 
