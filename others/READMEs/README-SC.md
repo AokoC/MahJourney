@@ -95,8 +95,6 @@
 
 v0.9.1 [Releases](https://github.com/AokoC/MahJourney/releases)
 
-v0.9.1 [微云]()
-
 ## 我有问题！
 
 ### 为什么你图片里有个何切三百？
